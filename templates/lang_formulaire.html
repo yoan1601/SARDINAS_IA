@@ -1,0 +1,52 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Codage /</span> Sard IA</h4>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6 mb-4 mb-md-0 mx-auto">
+        <div class="accordion mt-3" id="accordionExample">
+          <div class="card accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionOne" aria-expanded="false" aria-controls="accordionOne">
+                Description
+              </button>
+            </h2>
+
+            <div id="accordionOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample" style="">
+              <div class="accordion-body">
+                <strong>Sard IA</strong> est une application web innovante conçue pour analyser et prédire si un <span class="text-warning">langage binaire donné</span> est <span class="text-info">un code</span>. Basée sur l'algorithme de <span class="text-success">Sardinas-Patterson</span>, cette application offre aux utilisateurs un moyen intuitif et interactif de vérifier les propriétés de codage de leurs ensembles de mots.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <form method="post" action="{% url 'submit_view' %}">
+      {% csrf_token %}
+        <div class="col-md-6 mx-auto">
+          <div class="card mb-4">
+            <h5 class="card-header">Entrez votre langage</h5>
+            <div class="card-body">
+              <input type="hidden" name="num_word" id="num_word" value="1">
+              <div id="lang-input" class="mb-3">
+                <input type="text" class="form-control mb-2" id="mot1" name="mot1" placeholder="ex : 0010" aria-describedby="defaultFormControlHelp" required>
+              </div>
+              <div>
+                <button type="submit" class="btn btn-success">Valider</button>
+                <button type="button" id="addBtn" class="btn btn-info ms-2">Ajouter un mot</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

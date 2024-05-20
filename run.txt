@@ -1,0 +1,7 @@
+sardinas-env\Scripts\activate
+
+py manage.py runserver 8000
+
+py manage.py startapp polls
+
+py manage.py startapp web

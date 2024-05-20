@@ -1,0 +1,29 @@
+{% extends 'template.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-sm-6 col-lg-4 mb-4 mx-auto">
+            <div class="card">
+              <img class="card-img-top" src="{% static 'assets/img/code/positif.jpg' %}" alt="Card image cap">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-lg-4 mb-4 mx-auto">
+            <div class="card text-center">
+              <div class="card-body">
+                <h5 class="card-title text-success">Positif</h5>
+                <p class="card-text"><strong>L = {{ langage }}</strong> est un code</p>
+              </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="d-flex justify-content-center">
+            <a href="{% url 'form' %}" class="btn btn-info">Retour</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
